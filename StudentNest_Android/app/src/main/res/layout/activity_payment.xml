@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/bg_primary">
+    <com.google.android.material.appbar.AppBarLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:background="@color/brand_navy" app:elevation="0dp">
+        <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar" android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize" android:paddingTop="16dp"
+            app:navigationIcon="@drawable/ic_back" app:navigationIconTint="#FFFFFF"
+            app:title="Secure Payment" app:titleTextColor="#FFFFFF"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent"
+        android:fillViewport="true" app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="16dp" android:paddingBottom="32dp">
+            <!-- Summary -->
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="16dp"
+                app:cardCornerRadius="20dp" app:cardElevation="5dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="20dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Order Summary" android:textSize="16sp"
+                        android:textColor="@color/brand_navy" android:fontFamily="sans-serif-medium"/>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:layout_marginTop="14dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="Property"
+                            android:textColor="@color/text_secondary" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tvSummaryProperty" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="Property"
+                            android:textColor="@color/text_primary" android:textSize="13sp"
+                            android:fontFamily="sans-serif-medium" android:maxWidth="160dp"
+                            android:ellipsize="end" android:maxLines="2" android:gravity="end"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:layout_marginTop="8dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="Location"
+                            android:textColor="@color/text_secondary" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tvSummaryLocation" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="Location"
+                            android:textColor="@color/text_primary" android:textSize="13sp"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:layout_marginTop="8dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="Monthly Rent"
+                            android:textColor="@color/text_secondary" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tvSummaryRent" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="BWP 1,200"
+                            android:textColor="@color/text_primary" android:textSize="13sp"/>
+                    </LinearLayout>
+                    <View android:layout_width="match_parent" android:layout_height="1dp"
+                        android:background="@color/divider" android:layout_marginTop="12dp" android:layout_marginBottom="12dp"/>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="Deposit Amount"
+                            android:textColor="@color/brand_navy" android:textSize="15sp" android:fontFamily="sans-serif-medium"/>
+                        <TextView android:id="@+id/tvSummaryDeposit" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="BWP 600"
+                            android:textColor="@color/brand_gold" android:textSize="18sp" android:fontFamily="sans-serif-medium"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <!-- Payment Method -->
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="16dp"
+                app:cardCornerRadius="20dp" app:cardElevation="5dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="20dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Payment Method" android:textSize="16sp"
+                        android:textColor="@color/brand_navy" android:fontFamily="sans-serif-medium" android:layout_marginBottom="14dp"/>
+                    <RadioGroup android:id="@+id/rgPaymentMethod" android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <RadioButton android:id="@+id/rbCard" android:layout_width="match_parent"
+                            android:layout_height="48dp" android:text="💳  Credit / Debit Card"
+                            android:textColor="@color/text_primary" android:checked="true"
+                            android:buttonTint="@color/brand_teal" android:textSize="14sp"/>
+                        <RadioButton android:id="@+id/rbMobileMoney" android:layout_width="match_parent"
+                            android:layout_height="48dp" android:text="📱  Mobile Money (OrangeMoney / MyZaka)"
+                            android:textColor="@color/text_primary" android:buttonTint="@color/brand_teal" android:textSize="14sp"/>
+                        <RadioButton android:id="@+id/rbBankTransfer" android:layout_width="match_parent"
+                            android:layout_height="48dp" android:text="🏦  Bank Transfer (EFT)"
+                            android:textColor="@color/text_primary" android:buttonTint="@color/brand_teal" android:textSize="14sp"/>
+                    </RadioGroup>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <!-- Card Details -->
+            <androidx.cardview.widget.CardView android:id="@+id/cardDetailsView"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp" app:cardCornerRadius="20dp" app:cardElevation="5dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="20dp">
+                    <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                        android:layout_height="160dp" android:layout_marginBottom="20dp"
+                        app:cardCornerRadius="16dp" app:cardElevation="6dp">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                            android:orientation="vertical" android:padding="20dp" android:background="@drawable/bg_card_preview">
+                            <ImageView android:layout_width="40dp" android:layout_height="24dp"
+                                android:src="@drawable/ic_card" app:tint="#FFFFFF" android:contentDescription="Card"/>
+                            <TextView android:id="@+id/tvCardPreviewNumber" android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" android:text="•••• •••• •••• ••••"
+                                android:textColor="#FFFFFF" android:textSize="18sp" android:letterSpacing="0.1"
+                                android:fontFamily="sans-serif-medium" android:layout_marginTop="16dp"/>
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                android:orientation="horizontal" android:layout_marginTop="12dp">
+                                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                                    android:orientation="vertical" android:layout_weight="1">
+                                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                        android:text="Card Holder" android:textColor="#80FFFFFF" android:textSize="10sp"/>
+                                    <TextView android:id="@+id/tvCardPreviewName" android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" android:text="YOUR NAME"
+                                        android:textColor="#FFFFFF" android:textSize="13sp"/>
+                                </LinearLayout>
+                                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                    android:orientation="vertical" android:gravity="end">
+                                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                        android:text="Expires" android:textColor="#80FFFFFF" android:textSize="10sp"/>
+                                    <TextView android:id="@+id/tvCardPreviewExpiry" android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" android:text="MM/YY"
+                                        android:textColor="#FFFFFF" android:textSize="13sp"/>
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                    <com.google.android.material.textfield.TextInputLayout android:id="@+id/tilCardNumber"
+                        style="@style/InputField" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Card Number" app:startIconDrawable="@drawable/ic_card" app:startIconTint="@color/brand_teal">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/etCardNumber"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:inputType="number" android:maxLength="19" android:textColor="@color/text_primary" android:imeOptions="actionNext"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout android:id="@+id/tilCardName"
+                        style="@style/InputField" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Cardholder Name" android:layout_marginTop="14dp"
+                        app:startIconDrawable="@drawable/ic_profile" app:startIconTint="@color/brand_teal">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/etCardName"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:inputType="textCapWords" android:textColor="@color/text_primary" android:imeOptions="actionNext"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:layout_marginTop="14dp">
+                        <com.google.android.material.textfield.TextInputLayout android:id="@+id/tilExpiry"
+                            style="@style/InputField" android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:hint="MM/YY" android:layout_marginEnd="8dp">
+                            <com.google.android.material.textfield.TextInputEditText android:id="@+id/etExpiry"
+                                android:layout_width="match_parent" android:layout_height="wrap_content"
+                                android:inputType="number" android:maxLength="5" android:textColor="@color/text_primary" android:imeOptions="actionNext"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout android:id="@+id/tilCvv"
+                            style="@style/InputField" android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:hint="CVV" android:layout_marginStart="8dp" app:endIconMode="password_toggle">
+                            <com.google.android.material.textfield.TextInputEditText android:id="@+id/etCvv"
+                                android:layout_width="match_parent" android:layout_height="wrap_content"
+                                android:inputType="numberPassword" android:maxLength="4" android:textColor="@color/text_primary" android:imeOptions="actionDone"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <!-- Move-in date -->
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="16dp"
+                app:cardCornerRadius="20dp" app:cardElevation="5dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="20dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Move-In Date" android:textSize="16sp"
+                        android:textColor="@color/brand_navy" android:fontFamily="sans-serif-medium" android:layout_marginBottom="14dp"/>
+                    <com.google.android.material.textfield.TextInputLayout android:id="@+id/tilMoveIn"
+                        style="@style/InputField" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Select Move-in Date"
+                        app:startIconDrawable="@drawable/ic_calendar" app:startIconTint="@color/brand_teal"
+                        app:endIconDrawable="@drawable/ic_calendar" app:endIconTint="@color/brand_teal">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/etMoveIn"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:focusable="false" android:clickable="true" android:inputType="none" android:textColor="@color/text_primary"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <TextView android:id="@+id/tvError" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:textColor="#E74C3C"
+                android:textSize="13sp" android:layout_marginBottom="12dp" android:visibility="gone"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnPay"
+                android:layout_width="match_parent" android:layout_height="56dp"
+                android:text="Confirm Payment" android:textSize="16sp" android:textColor="@color/white"
+                android:backgroundTint="@color/brand_teal" app:cornerRadius="14dp"
+                app:icon="@drawable/ic_security" app:iconTint="@color/white" app:iconPadding="8dp"/>
+            <ProgressBar android:id="@+id/progressBar" android:layout_width="40dp" android:layout_height="40dp"
+                android:layout_gravity="center" android:layout_marginTop="16dp"
+                android:indeterminateTint="@color/brand_teal" android:visibility="gone"/>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="🔒 Secured by Firebase. Simulated payment for demonstration."
+                android:textColor="@color/text_hint" android:textSize="11sp"
+                android:gravity="center" android:layout_marginTop="12dp"/>
+        </LinearLayout>
+    </ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

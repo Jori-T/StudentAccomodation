@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/brand_navy"
+        app:elevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:paddingTop="48dp">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:layout_weight="1">
+                    <TextView android:id="@+id/tvGreeting" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="Good morning,"
+                        android:textColor="#99FFFFFF" android:textSize="13sp"/>
+                    <TextView android:id="@+id/tvUserName" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="Student"
+                        android:textColor="#FFFFFF" android:textSize="20sp" android:fontFamily="sans-serif-medium"/>
+                </LinearLayout>
+                <FrameLayout android:layout_width="42dp" android:layout_height="42dp"
+                    android:background="@drawable/bg_circle_teal" android:alpha="0.2"/>
+                <ImageView android:id="@+id/ivFirebase" android:layout_width="24dp" android:layout_height="24dp"
+                    android:src="@drawable/ic_notification" android:layout_marginStart="-33dp"
+                    android:contentDescription="Firebase"/>
+            </LinearLayout>
+
+            <!-- Search bar -->
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginTop="18dp"
+                app:cardCornerRadius="14dp" app:cardElevation="0dp" app:cardBackgroundColor="@color/white">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="52dp"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:paddingStart="16dp" android:paddingEnd="8dp">
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                        android:src="@drawable/ic_search" app:tint="@color/text_hint"
+                        android:contentDescription="Search"/>
+                    <EditText android:id="@+id/etSearch" android:layout_width="0dp"
+                        android:layout_height="match_parent" android:layout_weight="1"
+                        android:hint="Search area, type, price..." android:textColorHint="@color/text_hint"
+                        android:textColor="@color/text_primary" android:textSize="14sp"
+                        android:background="@null" android:paddingStart="12dp"
+                        android:inputType="text" android:imeOptions="actionSearch"/>
+                    <ImageView android:id="@+id/btnFilter" android:layout_width="36dp" android:layout_height="36dp"
+                        android:src="@drawable/ic_filter" android:background="@drawable/bg_circle_teal"
+                        android:padding="8dp" android:contentDescription="Filter"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Type chips -->
+            <HorizontalScrollView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="14dp" android:scrollbars="none">
+                <LinearLayout android:id="@+id/chipGroup" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                    <com.google.android.material.chip.Chip android:id="@+id/chipAll"
+                        android:layout_width="wrap_content" android:layout_height="32dp"
+                        android:text="All" android:textSize="12sp"
+                        app:chipBackgroundColor="@color/brand_teal" android:textColor="@color/white" app:chipMinHeight="32dp"/>
+                    <com.google.android.material.chip.Chip android:id="@+id/chipSingle"
+                        android:layout_width="wrap_content" android:layout_height="32dp"
+                        android:text="Single" android:textSize="12sp" android:layout_marginStart="8dp"
+                        app:chipBackgroundColor="#33FFFFFF" android:textColor="@color/white" app:chipMinHeight="32dp"/>
+                    <com.google.android.material.chip.Chip android:id="@+id/chipDouble"
+                        android:layout_width="wrap_content" android:layout_height="32dp"
+                        android:text="Double" android:textSize="12sp" android:layout_marginStart="8dp"
+                        app:chipBackgroundColor="#33FFFFFF" android:textColor="@color/white" app:chipMinHeight="32dp"/>
+                    <com.google.android.material.chip.Chip android:id="@+id/chipEnsuite"
+                        android:layout_width="wrap_content" android:layout_height="32dp"
+                        android:text="En-suite" android:textSize="12sp" android:layout_marginStart="8dp"
+                        app:chipBackgroundColor="#33FFFFFF" android:textColor="@color/white" app:chipMinHeight="32dp"/>
+                    <com.google.android.material.chip.Chip android:id="@+id/chipFlat"
+                        android:layout_width="wrap_content" android:layout_height="32dp"
+                        android:text="Flat" android:textSize="12sp" android:layout_marginStart="8dp"
+                        app:chipBackgroundColor="#33FFFFFF" android:textColor="@color/white" app:chipMinHeight="32dp"/>
+                </LinearLayout>
+            </HorizontalScrollView>
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:ignore="MissingClass">
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvListings"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            android:padding="12dp" android:clipToPadding="false"/>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <LinearLayout android:id="@+id/emptyState" android:layout_width="match_parent"
+        android:layout_height="match_parent" android:orientation="vertical" android:gravity="center"
+        android:visibility="gone" app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <ImageView android:layout_width="80dp" android:layout_height="80dp"
+            android:src="@drawable/ic_house" app:tint="@color/medium_gray"
+            android:contentDescription="Empty"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="No listings found" android:textColor="@color/text_secondary"
+            android:textSize="16sp" android:layout_marginTop="16dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Try adjusting your search" android:textColor="@color/text_hint"
+            android:textSize="13sp" android:layout_marginTop="4dp"/>
+    </LinearLayout>
+
+    <ProgressBar android:id="@+id/pbLoading" android:layout_width="40dp" android:layout_height="40dp"
+        android:layout_gravity="center" android:indeterminateTint="@color/brand_teal"
+        android:visibility="gone" app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddListing" android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end" android:layout_margin="20dp"
+        android:src="@drawable/ic_add" android:backgroundTint="@color/brand_gold"
+        android:contentDescription="Add Listing" android:visibility="gone" app:elevation="8dp"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="5dp"
+    app:cardBackgroundColor="@color/white">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+
+        <FrameLayout android:layout_width="match_parent" android:layout_height="180dp">
+            <ImageView android:id="@+id/ivListingImage" android:layout_width="match_parent"
+                android:layout_height="match_parent" android:scaleType="centerCrop" android:contentDescription="Listing"/>
+            <View android:layout_width="match_parent" android:layout_height="80dp"
+                android:layout_gravity="bottom" android:background="@drawable/gradient_overlay"/>
+            <TextView android:id="@+id/tvStatus" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_gravity="top|end"
+                android:layout_margin="12dp" android:text="Available" android:textSize="11sp"
+                android:textColor="@color/status_available" android:fontFamily="sans-serif-medium"
+                android:paddingStart="10dp" android:paddingEnd="10dp" android:paddingTop="4dp"
+                android:paddingBottom="4dp" android:background="@drawable/bg_status_available"/>
+            <TextView android:id="@+id/tvType" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_gravity="bottom|start"
+                android:layout_margin="12dp" android:text="Single Room" android:textSize="11sp"
+                android:textColor="#FFFFFF" android:fontFamily="sans-serif-medium"
+                android:paddingStart="10dp" android:paddingEnd="10dp" android:paddingTop="4dp"
+                android:paddingBottom="4dp" android:background="@drawable/bg_type_badge"/>
+        </FrameLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="14dp">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical">
+                <TextView android:id="@+id/tvTitle" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="Title" android:textSize="15sp"
+                    android:textColor="@color/text_primary" android:fontFamily="sans-serif-medium"
+                    android:maxLines="2" android:ellipsize="end"/>
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginStart="8dp">
+                    <ImageView android:layout_width="14dp" android:layout_height="14dp"
+                        android:src="@drawable/ic_star" android:contentDescription="Star"/>
+                    <TextView android:id="@+id/tvRating" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="4.5"
+                        android:textSize="12sp" android:textColor="@color/text_secondary" android:layout_marginStart="3dp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginTop="6dp">
+                <ImageView android:layout_width="14dp" android:layout_height="14dp"
+                    android:src="@drawable/ic_location" android:contentDescription="Location"/>
+                <TextView android:id="@+id/tvLocation" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="Gaborone West"
+                    android:textSize="12sp" android:textColor="@color/text_secondary"
+                    android:layout_marginStart="5dp" android:maxLines="1" android:ellipsize="end"/>
+                <ImageView android:layout_width="14dp" android:layout_height="14dp"
+                    android:src="@drawable/ic_map" android:contentDescription="Distance" android:layout_marginStart="8dp"/>
+                <TextView android:id="@+id/tvDistance" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="1.2 km"
+                    android:textSize="12sp" android:textColor="@color/text_secondary" android:layout_marginStart="3dp"/>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/amenitiesRow" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="8dp"/>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp"
+                android:background="@color/divider" android:layout_marginTop="10dp"/>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginTop="10dp">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:layout_weight="1">
+                    <TextView android:id="@+id/tvPrice" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="BWP 1,200"
+                        android:textSize="18sp" android:textColor="@color/brand_navy" android:fontFamily="sans-serif-medium"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="per month" android:textSize="10sp" android:textColor="@color/text_hint"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:background="@drawable/bg_chip" android:paddingStart="8dp"
+                    android:paddingEnd="8dp" android:paddingTop="5dp" android:paddingBottom="5dp">
+                    <ImageView android:layout_width="12dp" android:layout_height="12dp"
+                        android:src="@drawable/ic_calendar" android:contentDescription="Date"/>
+                    <TextView android:id="@+id/tvAvailableDate" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="May 1"
+                        android:textSize="11sp" android:textColor="@color/brand_teal" android:layout_marginStart="4dp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="brand_navy">#0D2137</color>
+    <color name="brand_blue">#1A3C5E</color>
+    <color name="brand_teal">#0E7C86</color>
+    <color name="brand_teal_light">#13A5B0</color>
+    <color name="brand_gold">#F5A623</color>
+    <color name="status_available">#27AE60</color>
+    <color name="status_reserved">#E74C3C</color>
+    <color name="status_occupied">#95A5A6</color>
+    <color name="white">#FFFFFF</color>
+    <color name="medium_gray">#BDC3CB</color>
+    <color name="text_primary">#1A202C</color>
+    <color name="text_secondary">#718096</color>
+    <color name="text_hint">#A0AEC0</color>
+    <color name="divider">#E2E8F0</color>
+    <color name="bg_primary">#F7F9FC</color>
+</resources>

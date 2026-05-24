@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/bg_primary">
+    <com.google.android.material.appbar.AppBarLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:background="@color/brand_navy" app:elevation="0dp">
+        <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar" android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize" android:paddingTop="16dp"
+            app:navigationIcon="@drawable/ic_back" app:navigationIconTint="#FFFFFF"
+            app:title="Add New Listing" app:titleTextColor="#FFFFFF"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent"
+        android:fillViewport="true" app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="16dp" android:paddingBottom="32dp">
+            <!-- Basic Info -->
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="12dp"
+                app:cardCornerRadius="16dp" app:cardElevation="4dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="20dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Basic Information" android:textSize="15sp"
+                        android:textColor="@color/brand_navy" android:fontFamily="sans-serif-medium" android:layout_marginBottom="14dp"/>
+                    <com.google.android.material.textfield.TextInputLayout android:id="@+id/tilTitle"
+                        style="@style/InputField" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Listing Title" app:startIconDrawable="@drawable/ic_home" app:startIconTint="@color/brand_teal">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/etTitle"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:inputType="textCapSentences" android:textColor="@color/text_primary" android:imeOptions="actionNext"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout android:id="@+id/tilDescription"
+                        style="@style/InputField" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Description" android:layout_marginTop="14dp">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/etDescription"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:inputType="textMultiLine" android:minLines="3" android:textColor="@color/text_primary"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout android:id="@+id/tilType"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Room Type" android:layout_marginTop="14dp">
+                        <AutoCompleteTextView android:id="@+id/actvType" android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:inputType="none" android:textColor="@color/text_primary"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout android:id="@+id/tilArea"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Area / Location" android:layout_marginTop="14dp">
+                        <AutoCompleteTextView android:id="@+id/actvArea" android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:inputType="none" android:textColor="@color/text_primary"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <!-- Pricing -->
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="12dp"
+                app:cardCornerRadius="16dp" app:cardElevation="4dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="20dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Pricing &amp; Availability" android:textSize="15sp"
+                        android:textColor="@color/brand_navy" android:fontFamily="sans-serif-medium" android:layout_marginBottom="14dp"/>
+                    <com.google.android.material.textfield.TextInputLayout android:id="@+id/tilPrice"
+                        style="@style/InputField" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Monthly Price (BWP)" app:startIconDrawable="@drawable/ic_money" app:startIconTint="@color/brand_gold">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/etPrice"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:inputType="numberDecimal" android:textColor="@color/text_primary" android:imeOptions="actionNext"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout android:id="@+id/tilDeposit"
+                        style="@style/InputField" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:hint="Security Deposit (BWP)" app:startIconDrawable="@drawable/ic_money" app:startIconTint="@color/brand_teal"
+                        app:helperText="Must be 25% - 100% of rent" app:helperTextEnabled="true">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/etDeposit"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:inputType="numberDecimal" android:textColor="@color/text_primary" android:imeOptions="actionNext"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout android:id="@+id/tilAvailabilityDate"
+                        style="@style/InputField" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Availability Date" android:layout_marginTop="14dp"
+                        app:startIconDrawable="@drawable/ic_calendar" app:startIconTint="@color/brand_teal">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/etAvailabilityDate"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:focusable="false" android:clickable="true" android:inputType="none" android:textColor="@color/text_primary"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <!-- Amenities -->
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="12dp"
+                app:cardCornerRadius="16dp" app:cardElevation="4dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="20dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Amenities" android:textSize="15sp"
+                        android:textColor="@color/brand_navy" android:fontFamily="sans-serif-medium" android:layout_marginBottom="14dp"/>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <CheckBox android:id="@+id/cbWifi" android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="📶 WiFi" android:buttonTint="@color/brand_teal"
+                            android:textColor="@color/text_primary" android:checked="true"/>
+                        <CheckBox android:id="@+id/cbWater" android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="💧 Water" android:buttonTint="@color/brand_teal"
+                            android:textColor="@color/text_primary" android:checked="true"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:layout_marginTop="4dp">
+                        <CheckBox android:id="@+id/cbElectricity" android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="⚡ Electricity" android:buttonTint="@color/brand_teal"
+                            android:textColor="@color/text_primary" android:checked="true"/>
+                        <CheckBox android:id="@+id/cbParking" android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="🚗 Parking" android:buttonTint="@color/brand_teal"
+                            android:textColor="@color/text_primary"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:layout_marginTop="4dp">
+                        <CheckBox android:id="@+id/cbSecurity" android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="🔒 Security" android:buttonTint="@color/brand_teal"
+                            android:textColor="@color/text_primary"/>
+                        <CheckBox android:id="@+id/cbKitchen" android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="🍳 Kitchen" android:buttonTint="@color/brand_teal"
+                            android:textColor="@color/text_primary"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <!-- Contact -->
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="20dp"
+                app:cardCornerRadius="16dp" app:cardElevation="4dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="20dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Contact Information" android:textSize="15sp"
+                        android:textColor="@color/brand_navy" android:fontFamily="sans-serif-medium" android:layout_marginBottom="14dp"/>
+                    <com.google.android.material.textfield.TextInputLayout android:id="@+id/tilLandlordName"
+                        style="@style/InputField" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Your Name (Landlord)" app:startIconDrawable="@drawable/ic_profile" app:startIconTint="@color/brand_teal">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/etLandlordName"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:inputType="textPersonName" android:textColor="@color/text_primary" android:imeOptions="actionNext"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout android:id="@+id/tilLandlordPhone"
+                        style="@style/InputField" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Phone Number" android:layout_marginTop="14dp"
+                        app:startIconDrawable="@drawable/ic_phone" app:startIconTint="@color/brand_teal">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/etLandlordPhone"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:inputType="phone" android:textColor="@color/text_primary" android:imeOptions="actionDone"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnSubmit"
+                android:layout_width="match_parent" android:layout_height="56dp"
+                android:text="Publish to Firebase" android:textColor="@color/white"
+                android:backgroundTint="@color/brand_teal" app:cornerRadius="14dp"/>
+            <ProgressBar android:id="@+id/progressBar" android:layout_width="40dp" android:layout_height="40dp"
+                android:layout_gravity="center" android:layout_marginTop="12dp"
+                android:indeterminateTint="@color/brand_teal" android:visibility="gone"/>
+        </LinearLayout>
+    </ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

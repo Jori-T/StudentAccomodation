@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/bg_primary">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@color/brand_navy" android:padding="24dp" android:paddingTop="48dp"
+            android:paddingBottom="40dp" android:gravity="center" android:orientation="vertical">
+            <FrameLayout android:layout_width="84dp" android:layout_height="84dp"
+                android:background="@drawable/bg_circle_teal">
+                <TextView android:id="@+id/tvInitial" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="S" android:textSize="34sp"
+                    android:textColor="@color/brand_teal" android:fontFamily="sans-serif-medium" android:layout_gravity="center"/>
+            </FrameLayout>
+            <TextView android:id="@+id/tvProfileName" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="Student Name" android:textSize="20sp"
+                android:textColor="#FFFFFF" android:fontFamily="sans-serif-medium" android:layout_marginTop="14dp"/>
+            <TextView android:id="@+id/tvProfileEmail" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="email@student.bac.bw"
+                android:textSize="13sp" android:textColor="#99FFFFFF" android:layout_marginTop="4dp"/>
+            <TextView android:id="@+id/tvProfileRole" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="STUDENT" android:textSize="11sp"
+                android:textColor="@color/brand_teal" android:fontFamily="sans-serif-medium"
+                android:paddingStart="14dp" android:paddingEnd="14dp" android:paddingTop="5dp"
+                android:paddingBottom="5dp" android:background="@drawable/bg_chip" android:layout_marginTop="10dp"/>
+        </LinearLayout>
+        <!-- Stats -->
+        <androidx.cardview.widget.CardView android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp" android:layout_marginTop="-20dp"
+            app:cardCornerRadius="16dp" app:cardElevation="8dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:padding="20dp">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:gravity="center" android:layout_weight="1">
+                    <TextView android:id="@+id/tvStatBookings" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="0" android:textSize="22sp"
+                        android:textColor="@color/brand_teal" android:fontFamily="sans-serif-medium"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Bookings" android:textSize="12sp" android:textColor="@color/text_secondary"/>
+                </LinearLayout>
+                <View android:layout_width="1dp" android:layout_height="40dp" android:background="@color/divider"/>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:gravity="center" android:layout_weight="1">
+                    <TextView android:id="@+id/tvFirebaseTag" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="🔥" android:textSize="22sp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Firebase" android:textSize="12sp" android:textColor="@color/text_secondary"/>
+                </LinearLayout>
+                <View android:layout_width="1dp" android:layout_height="40dp" android:background="@color/divider"/>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:gravity="center" android:layout_weight="1">
+                    <TextView android:id="@+id/tvStatId" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="—" android:textSize="15sp"
+                        android:textColor="@color/brand_navy" android:fontFamily="sans-serif-medium"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Student ID" android:textSize="12sp" android:textColor="@color/text_secondary"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <!-- Menu items -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:layout_marginTop="20dp"
+            android:paddingStart="16dp" android:paddingEnd="16dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="ACCOUNT" android:textSize="11sp" android:textColor="@color/text_hint"
+                android:letterSpacing="0.1" android:layout_marginBottom="8dp" android:layout_marginStart="4dp"/>
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp" app:cardElevation="3dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                    <LinearLayout android:id="@+id/btnPreferences" android:layout_width="match_parent"
+                        android:layout_height="56dp" android:orientation="horizontal" android:gravity="center_vertical"
+                        android:paddingStart="20dp" android:paddingEnd="20dp" android:background="?attr/selectableItemBackground">
+                        <FrameLayout android:layout_width="36dp" android:layout_height="36dp" android:background="@drawable/bg_circle_teal">
+                            <ImageView android:layout_width="18dp" android:layout_height="18dp"
+                                android:src="@drawable/ic_settings" android:layout_gravity="center" android:contentDescription="Settings"/>
+                        </FrameLayout>
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                            android:text="Notification Preferences" android:textColor="@color/text_primary"
+                            android:textSize="14sp" android:layout_marginStart="14dp"/>
+                        <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                            android:src="@drawable/ic_back" android:rotation="180" app:tint="@color/medium_gray"
+                            android:contentDescription="Arrow"/>
+                    </LinearLayout>
+                    <View android:layout_width="match_parent" android:layout_height="1dp"
+                        android:background="@color/divider" android:layout_marginStart="70dp"/>
+                    <LinearLayout android:id="@+id/btnMyListings" android:layout_width="match_parent"
+                        android:layout_height="56dp" android:orientation="horizontal" android:gravity="center_vertical"
+                        android:paddingStart="20dp" android:paddingEnd="20dp"
+                        android:background="?attr/selectableItemBackground" android:visibility="gone">
+                        <FrameLayout android:layout_width="36dp" android:layout_height="36dp" android:background="@drawable/bg_circle_teal">
+                            <ImageView android:layout_width="18dp" android:layout_height="18dp"
+                                android:src="@drawable/ic_home" android:layout_gravity="center" android:contentDescription="Listings"/>
+                        </FrameLayout>
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                            android:text="My Listings" android:textColor="@color/text_primary"
+                            android:textSize="14sp" android:layout_marginStart="14dp"/>
+                        <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                            android:src="@drawable/ic_back" android:rotation="180" app:tint="@color/medium_gray"
+                            android:contentDescription="Arrow"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="SESSION" android:textSize="11sp" android:textColor="@color/text_hint"
+                android:letterSpacing="0.1" android:layout_marginBottom="8dp" android:layout_marginStart="4dp"/>
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="32dp"
+                app:cardCornerRadius="16dp" app:cardElevation="3dp">
+                <LinearLayout android:id="@+id/btnLogout" android:layout_width="match_parent"
+                    android:layout_height="56dp" android:orientation="horizontal" android:gravity="center_vertical"
+                    android:paddingStart="20dp" android:paddingEnd="20dp" android:background="?attr/selectableItemBackground">
+                    <FrameLayout android:layout_width="36dp" android:layout_height="36dp" android:background="#FFF0F0">
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp"
+                            android:src="@drawable/ic_logout" android:layout_gravity="center" android:contentDescription="Logout"/>
+                    </FrameLayout>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                        android:text="Logout" android:textColor="#E74C3C" android:textSize="14sp" android:layout_marginStart="14dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
